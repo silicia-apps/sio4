@@ -1,0 +1,186 @@
+{
+  "name": "sidemenu",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/sidemenu/src",
+  "prefix": "sio4",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/sidemenu",
+        "index": "apps/sidemenu/src/index.html",
+        "main": "apps/sidemenu/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/sidemenu/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/sidemenu/src/assets",
+          {
+            "glob": "**/*.svg",
+            "input": "node_modules/ionicons/dist/ionicons/svg",
+            "output": "./svg"
+          }
+        ],
+        "styles": [
+          "apps/sidemenu/src/styles.scss",
+          {
+            "input": "apps/sidemenu/src/theme/variables.scss"
+          }
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "sidemenu:build:production"
+        },
+        "development": {
+          "browserTarget": "sidemenu:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "sidemenu:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/sidemenu/**/*.ts", "apps/sidemenu/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/sidemenu/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "cap": {
+      "executor": "@nxext/capacitor:cap",
+      "options": {
+        "cmd": "--help"
+      }
+    },
+    "add": {
+      "executor": "@nxext/capacitor:cap",
+      "options": {
+        "cmd": "add"
+      },
+      "configurations": {
+        "ios": {
+          "cmd": "add ios"
+        },
+        "android": {
+          "cmd": "add android"
+        }
+      }
+    },
+    "copy": {
+      "executor": "@nxext/capacitor:cap",
+      "options": {
+        "cmd": "copy"
+      },
+      "configurations": {
+        "ios": {
+          "cmd": "copy ios"
+        },
+        "android": {
+          "cmd": "copy android"
+        }
+      }
+    },
+    "open": {
+      "executor": "@nxext/capacitor:cap",
+      "options": {
+        "cmd": "open"
+      },
+      "configurations": {
+        "ios": {
+          "cmd": "open ios"
+        },
+        "android": {
+          "cmd": "open android"
+        }
+      }
+    },
+    "run": {
+      "executor": "@nxext/capacitor:cap",
+      "options": {
+        "cmd": "run"
+      },
+      "configurations": {
+        "ios": {
+          "cmd": "run ios"
+        },
+        "android": {
+          "cmd": "run android"
+        }
+      }
+    },
+    "sync": {
+      "executor": "@nxext/capacitor:cap",
+      "options": {
+        "cmd": "sync"
+      },
+      "configurations": {
+        "ios": {
+          "cmd": "sync ios"
+        },
+        "android": {
+          "cmd": "sync android"
+        }
+      }
+    },
+    "update": {
+      "executor": "@nxext/capacitor:cap",
+      "options": {
+        "cmd": "update"
+      },
+      "configurations": {
+        "ios": {
+          "cmd": "update ios"
+        },
+        "android": {
+          "cmd": "update android"
+        }
+      }
+    }
+  },
+  "tags": []
+}
