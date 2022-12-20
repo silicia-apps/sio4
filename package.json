@@ -46,6 +46,8 @@
     "@nrwl/nx-cloud": "latest",
     "@nrwl/workspace": "15.3.3",
     "@nxext/ionic-angular": "^14.0.0",
+    "@stencil/core": "2.17.1",
+    "@stencil/sass": "1.5.2",
     "@types/jest": "28.1.1",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
@@ -59,6 +61,7 @@
     "jest-preset-angular": "~12.2.3",
     "nx": "15.3.3",
     "prettier": "^2.6.2",
+    "puppeteer": "^15.5.0",
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
     "typescript": "~4.8.2"

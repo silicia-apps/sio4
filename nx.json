@@ -51,5 +51,8 @@
       "style": "scss"
     }
   },
-  "defaultProject": "sidemenu"
+  "defaultProject": "sidemenu",
+  "cli": {
+    "defaultCollection": "@nxext/stencil"
+  }
 }

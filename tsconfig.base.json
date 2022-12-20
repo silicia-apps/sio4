@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sio4/angular": ["libs/angular/src/index.ts"]
+      "@sio4/angular": ["libs/angular/src/index.ts"],
+      "@sio4/core": ["libs/core/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
