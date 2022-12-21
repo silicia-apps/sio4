@@ -39,3 +39,6 @@ testem.log
 Thumbs.db
 
 .angular
+libs/react/**/generated
+libs/svelte/**/generated
+libs/angular/**/generated

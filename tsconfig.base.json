@@ -16,7 +16,11 @@
     "baseUrl": ".",
     "paths": {
       "@sio4/angular": ["libs/angular/src/index.ts"],
-      "@sio4/core": ["libs/core/src/index.ts"]
+      "@sio4/core": ["dist/libs/core"],
+      "@sio4/core/*": ["dist/libs/core/dist/components/*"],
+      "@sio4/core/loader": ["dist/libs/core/loader"],
+      "@sio4/react": ["libs/react/src/index.ts"],
+      "@sio4/svelte": ["libs/svelte/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

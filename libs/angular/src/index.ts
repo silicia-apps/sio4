@@ -1,1 +1,1 @@
-export * from './lib/angular.module';
+export * from './lib/core-angular.module';
