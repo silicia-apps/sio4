@@ -51,7 +51,7 @@ export class Sio4CoreAppComponent implements Sio4CoreAppInterface {
                 <slot name="footer">
                   <ion-toolbar>
                     <ion-buttons slot="end">
-                      <ion-button>
+                      <ion-button href="https://github.com/silicia-apps/sio4">
                         <ion-icon
                           slot="icon-only"
                           name="logo-github"
