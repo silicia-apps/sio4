@@ -10,4 +10,4 @@ defineCustomElements();
   declarations: [...DIRECTIVES],
   exports: [...DIRECTIVES],
 })
-export class CoreAngularModule {}
+export class sio4CoreAngularModule {}

@@ -1,36 +1,36 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { MyComponent } from './my-component';
+import { Sio4CoreAppComponent } from './app';
 
-describe('my-component', () => {
+describe('sio4-app', () => {
   it('renders', async () => {
     const { root } = await newSpecPage({
-      components: [MyComponent],
-      html: '<my-component></my-component>',
+      components: [Sio4CoreAppComponent],
+      html: '<sio4-app></sio4-app>',
     });
     expect(root).toEqualHtml(`
-      <my-component>
+      <sio4-app>
         <mock:shadow-root>
           <div>
             Hello, World! I'm
           </div>
         </mock:shadow-root>
-      </my-component>
+      </sio4-app>
     `);
   });
 
   it('renders with values', async () => {
     const { root } = await newSpecPage({
-      components: [MyComponent],
-      html: `<my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>`,
+      components: [Sio4CoreAppComponent],
+      html: `<sio4-app first="Stencil" last="'Don't call me a framework' JS"></sio4-app>`,
     });
     expect(root).toEqualHtml(`
-      <my-component first="Stencil" last="'Don't call me a framework' JS">
+      <sio4-app first="Stencil" last="'Don't call me a framework' JS">
         <mock:shadow-root>
           <div>
             Hello, World! I'm Stencil 'Don't call me a framework' JS
           </div>
         </mock:shadow-root>
-      </my-component>
+      </sio4-app>
     `);
   });
 });

@@ -5,57 +5,117 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Sio4CoreMenuInterface } from "./components/menu";
+import { Sio4CoreMenuItemInterface } from "./components/menu-item";
 export namespace Components {
-    interface MyComponent {
+    interface Sio4App {
+        "appName": string;
+        "color": string | undefined;
+        "menu": Sio4CoreMenuInterface | undefined;
+        "sidemenu": 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
+    }
+    interface Sio4Menu {
+        "color": string | undefined;
+        "enabled": boolean;
+        "label": string;
+        "layout": 'flat' | 'accordion';
+        "lines": 'full' | 'inset' | 'none';
+        "menuId": string;
+        "menuItems": Sio4CoreMenuItemInterface[] | undefined;
+        "position": 'top' | 'bottom' | 'hover';
+        "toggleIcon": string;
+        "toggleIconSlot": string;
+    }
+    interface Sio4MenuItem {
+        "badge": number;
+        "caption": string | undefined;
+        "disabled": boolean;
+        "icon": string | undefined;
+        "layout": string;
+        "menuItemId": number | undefined;
         /**
-          * The first name
+          * The mode determines which platform styles to use.
          */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+        "mode"?: "ios" | "md";
+        "styleMenu": string;
+        "tabbed": boolean;
+        "type": 'download' | 'navigate';
+        "url": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLSio4AppElement extends Components.Sio4App, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLSio4AppElement: {
+        prototype: HTMLSio4AppElement;
+        new (): HTMLSio4AppElement;
+    };
+    interface HTMLSio4MenuElement extends Components.Sio4Menu, HTMLStencilElement {
+    }
+    var HTMLSio4MenuElement: {
+        prototype: HTMLSio4MenuElement;
+        new (): HTMLSio4MenuElement;
+    };
+    interface HTMLSio4MenuItemElement extends Components.Sio4MenuItem, HTMLStencilElement {
+    }
+    var HTMLSio4MenuItemElement: {
+        prototype: HTMLSio4MenuItemElement;
+        new (): HTMLSio4MenuItemElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "sio4-app": HTMLSio4AppElement;
+        "sio4-menu": HTMLSio4MenuElement;
+        "sio4-menu-item": HTMLSio4MenuItemElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface Sio4App {
+        "appName"?: string;
+        "color"?: string | undefined;
+        "menu"?: Sio4CoreMenuInterface | undefined;
+        "sidemenu"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
+    }
+    interface Sio4Menu {
+        "color"?: string | undefined;
+        "enabled"?: boolean;
+        "label"?: string;
+        "layout"?: 'flat' | 'accordion';
+        "lines"?: 'full' | 'inset' | 'none';
+        "menuId"?: string;
+        "menuItems"?: Sio4CoreMenuItemInterface[] | undefined;
+        "position"?: 'top' | 'bottom' | 'hover';
+        "toggleIcon"?: string;
+        "toggleIconSlot"?: string;
+    }
+    interface Sio4MenuItem {
+        "badge"?: number;
+        "caption"?: string | undefined;
+        "disabled"?: boolean;
+        "icon"?: string | undefined;
+        "layout"?: string;
+        "menuItemId"?: number | undefined;
         /**
-          * The first name
+          * The mode determines which platform styles to use.
          */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "mode"?: "ios" | "md";
+        "styleMenu"?: string;
+        "tabbed"?: boolean;
+        "type"?: 'download' | 'navigate';
+        "url"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "sio4-app": Sio4App;
+        "sio4-menu": Sio4Menu;
+        "sio4-menu-item": Sio4MenuItem;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "sio4-app": LocalJSX.Sio4App & JSXBase.HTMLAttributes<HTMLSio4AppElement>;
+            "sio4-menu": LocalJSX.Sio4Menu & JSXBase.HTMLAttributes<HTMLSio4MenuElement>;
+            "sio4-menu-item": LocalJSX.Sio4MenuItem & JSXBase.HTMLAttributes<HTMLSio4MenuItemElement>;
         }
     }
 }
