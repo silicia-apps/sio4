@@ -21,6 +21,7 @@ export const config: Config = {
   extras: {
     experimentalImportInjection: true,
   },
+  globalScript: 'src/global/ionic-global.ts',
   plugins: [sass()],
   outputTargets: [
     {

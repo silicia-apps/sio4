@@ -17,7 +17,7 @@ export class Sio4CoreAppComponent implements Sio4CoreAppInterface {
     return (
       <ion-app>
         {this.sidemenu !== 'none' ? (
-          <ion-split-pane when={this.sidemenu} contentId="main-content">
+          <ion-split-pane when="xl" contentId="main-content">
             <ion-menu contentId="main-content" type="overlay">
               <ion-header class="ion-no-border">
                 <slot name="header">
@@ -65,7 +65,9 @@ export class Sio4CoreAppComponent implements Sio4CoreAppInterface {
                 </slot>
               </ion-footer>
             </ion-menu>
-            <slot></slot>
+            <div id="main-content">
+            <slot ></slot>
+            </div>
           </ion-split-pane>
         ) : (
           <slot></slot>
