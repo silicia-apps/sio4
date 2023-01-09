@@ -31,6 +31,19 @@
 | `"start"` | Content is placed to the left of the item.                            |
 
 
+## Dependencies
+
+### Used by
+
+ - [sio4-menu](../menu)
+
+### Graph
+```mermaid
+graph TD;
+  sio4-menu --> sio4-menu-item
+  style sio4-menu-item fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

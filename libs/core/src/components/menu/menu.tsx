@@ -14,7 +14,7 @@ export class Sio4CoreMenuComponent implements Sio4CoreMenuInterface {
   @Prop() label: string = 'NO LABEL';
   @Prop() color: string | undefined;
   @Prop() toggleIcon: string = '';
-  @Prop() toggleIconSlot: string = '';
+  @Prop() toggleIconSlot: 'start' | 'end' = 'start';
   @Prop() lines: 'full' | 'inset' | 'none' = 'none';
   @Prop() position: 'top' | 'bottom' | 'hover' = 'hover';
   @Prop() menuItems: Sio4CoreMenuItemInterface[] | undefined;
@@ -33,9 +33,9 @@ export class Sio4CoreMenuComponent implements Sio4CoreMenuInterface {
                 <ion-item slot="header" color={this.color}>
                   <ion-label>{this.label}</ion-label>
                 </ion-item>
-                <ion-list slot="content" inset="true">
+                <ion-list slot="content" inset>
                   {this.menuItems.map((item, index) => (
-                    <silicia-menu-item
+                    <sio4-menu-item
                       menuItemId={index}
                       color={this.color}
                       icon={item.icon}
@@ -54,7 +54,7 @@ export class Sio4CoreMenuComponent implements Sio4CoreMenuInterface {
               <ion-menu-toggle auto-hide="false">
                 {this.menuItems.map((item) => {
                   return (
-                    <silicia-menu-item
+                    <sio4-menu-item
                       color={this.color}
                       icon={item.icon}
                       caption={item.caption}
@@ -67,12 +67,10 @@ export class Sio4CoreMenuComponent implements Sio4CoreMenuInterface {
           )
         ) : (
           <ion-tabs
-            ionTabsDidChange="this.ionMenuDidChange(1)"
-            ionTabsWillChange="this.ionMenuWillChange(1)"
           >
             <ion-tab-bar color={this.color} class="ion-no-border">
               {this.menuItems.map((item) => {
-                <silicia-menu-item
+                <sio4-menu-item
                   color={this.color}
                   icon={item.icon}
                   caption={item.caption}

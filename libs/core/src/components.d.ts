@@ -24,7 +24,7 @@ export namespace Components {
         "menuItems": Sio4CoreMenuItemInterface[] | undefined;
         "position": 'top' | 'bottom' | 'hover';
         "toggleIcon": string;
-        "toggleIconSlot": string;
+        "toggleIconSlot": 'start' | 'end';
     }
     interface Sio4MenuItem {
         "badge": number;
@@ -85,7 +85,7 @@ declare namespace LocalJSX {
         "menuItems"?: Sio4CoreMenuItemInterface[] | undefined;
         "position"?: 'top' | 'bottom' | 'hover';
         "toggleIcon"?: string;
-        "toggleIconSlot"?: string;
+        "toggleIconSlot"?: 'start' | 'end';
     }
     interface Sio4MenuItem {
         "badge"?: number;

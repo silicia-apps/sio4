@@ -29,7 +29,7 @@ export class Sio4CoreAppComponent implements Sio4CoreAppInterface {
               <ion-content>
                 <slot name="center">
                   {this.menu !== undefined ? (
-                    <silicia-menu
+                    <sio4-menu
                       menuItems={this.menu.menuItems}
                       lines={this.menu.lines}
                       layout={this.menu.layout}

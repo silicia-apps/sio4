@@ -4,8 +4,6 @@ import { sass } from '@stencil/sass';
 
 import { reactOutputTarget } from '@stencil/react-output-target';
 
-import { svelteOutputTarget } from '@stencil/svelte-output-target';
-
 const angularValueAccessorBindings: ValueAccessorConfig[] = [];
 
 import {
@@ -51,12 +49,6 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@sio4/core',
       proxiesFile: '../../../libs/react/src/generated/components.ts',
-      includeDefineCustomElements: true,
-    }),
-
-    svelteOutputTarget({
-      componentCorePackage: '@sio4/core',
-      proxiesFile: '../../../libs/svelte/src/generated/components.ts',
       includeDefineCustomElements: true,
     }),
 

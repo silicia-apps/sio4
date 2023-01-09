@@ -54,7 +54,6 @@ export class Sio4CoreMenuItemComponent implements Sio4CoreMenuItemInterface {
         {this.tabbed ? (
           <ion-tab-button
             tab="{this.url}"
-            disabled="false"
             download="false"
             layout="icon-start"
           >
@@ -66,7 +65,7 @@ export class Sio4CoreMenuItemComponent implements Sio4CoreMenuItemInterface {
             {this.badge > 0 ? <ion-badge> {this.badge}</ion-badge> : null}
           </ion-tab-button>
         ) : (
-          <ion-item button detail="false" click="">
+          <ion-item button >
             <slot name="start">
               <ion-icon
                 name={this.icon}

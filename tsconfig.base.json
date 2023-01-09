@@ -23,5 +23,10 @@
       "@sio4/svelte": ["libs/svelte/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "references": [
+    {
+      "path": "./.storybook/tsconfig.json"
+    }
+  ]
 }
