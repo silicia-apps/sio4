@@ -9,10 +9,10 @@ import { Sio4MenuInterface } from "./components/sio4-menu";
 import { Sio4MenuItemInterface } from "./components/sio4-menu-item";
 export namespace Components {
     interface Sio4App {
-        "atitle": string;
         "color": string | undefined;
         "menu": Sio4MenuInterface | undefined;
         "sidemenu": 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
+        "title": string;
     }
     interface Sio4Icon {
         /**
@@ -91,10 +91,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface Sio4App {
-        "atitle"?: string;
         "color"?: string | undefined;
         "menu"?: Sio4MenuInterface | undefined;
         "sidemenu"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
+        "title"?: string;
     }
     interface Sio4Icon {
         /**

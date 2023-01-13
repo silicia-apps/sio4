@@ -9,10 +9,10 @@
 
 | Property   | Attribute  | Description | Type                                             | Default         |
 | ---------- | ---------- | ----------- | ------------------------------------------------ | --------------- |
-| `atitle`   | `atitle`   |             | `string`                                         | `'SILICIA APP'` |
 | `color`    | `color`    |             | `string`                                         | `undefined`     |
 | `menu`     | --         |             | `Sio4MenuInterface`                              | `undefined`     |
 | `sidemenu` | `sidemenu` |             | `"lg" \| "md" \| "none" \| "sm" \| "xl" \| "xs"` | `'none'`        |
+| `title`    | `title`    |             | `string`                                         | `'SILICIA APP'` |
 
 
 ## Dependencies

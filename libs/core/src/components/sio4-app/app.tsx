@@ -8,7 +8,7 @@ import { Sio4AppInterface } from './app.interface';
   shadow: true,
 })
 export class Sio4App implements Sio4AppInterface {
-  @Prop() atitle: string = 'SILICIA APP';
+  @Prop() title: string = 'SILICIA APP';
   @Prop() sidemenu: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none' = 'none';
   @Prop() color: string | undefined = undefined;
   @Prop() menu: Sio4MenuInterface | undefined = undefined;
@@ -22,7 +22,7 @@ export class Sio4App implements Sio4AppInterface {
               <ion-header class="ion-no-border">
                 <slot name="header">
                   <ion-toolbar color={this.color}>
-                    <ion-title>{this.atitle}</ion-title>
+                    <ion-title>{this.title}</ion-title>
                   </ion-toolbar>
                 </slot>
               </ion-header>
