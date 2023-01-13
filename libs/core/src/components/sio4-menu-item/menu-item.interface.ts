@@ -1,4 +1,4 @@
-export interface Sio4CoreMenuItemInterface {
+export interface Sio4MenuItemInterface {
   menuItemId: number;
   icon: string | undefined;
   caption: string | undefined;

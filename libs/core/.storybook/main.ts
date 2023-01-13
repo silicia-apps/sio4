@@ -14,6 +14,7 @@ export default {
     '../src/**/*.stories.mdx',
     '../src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
+  
   core: {
     builder: {
       name: 'webpack5',

@@ -1,13 +1,13 @@
 import { Component, h, Prop } from '@stencil/core';
-import { Sio4CoreMenuItemInterface } from '../menu-item';
-import { Sio4CoreMenuInterface } from './menu.interface';
+import { Sio4MenuItemInterface } from '../sio4-menu-item';
+import { Sio4MenuInterface } from './menu.interface';
 
 @Component({
   tag: 'sio4-menu',
   styleUrl: 'menu.scss',
   shadow: true,
 })
-export class Sio4CoreMenuComponent implements Sio4CoreMenuInterface {
+export class Sio4CoreMenuComponent implements Sio4MenuInterface {
   @Prop() menuId: string = 'main';
   @Prop() enabled: boolean = false;
   @Prop() layout: 'flat' | 'accordion' = 'flat';
@@ -17,7 +17,7 @@ export class Sio4CoreMenuComponent implements Sio4CoreMenuInterface {
   @Prop() toggleIconSlot: 'start' | 'end' = 'start';
   @Prop() lines: 'full' | 'inset' | 'none' = 'none';
   @Prop() position: 'top' | 'bottom' | 'hover' = 'hover';
-  @Prop() menuItems: Sio4CoreMenuItemInterface[] | undefined;
+  @Prop() menuItems: Sio4MenuItemInterface[] | undefined;
 
   render() {
     return (

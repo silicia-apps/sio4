@@ -5,14 +5,28 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Sio4CoreMenuInterface } from "./components/menu";
-import { Sio4CoreMenuItemInterface } from "./components/menu-item";
+import { Sio4MenuInterface } from "./components/sio4-menu";
+import { Sio4MenuItemInterface } from "./components/sio4-menu-item";
 export namespace Components {
     interface Sio4App {
-        "appName": string;
+        "atitle": string;
         "color": string | undefined;
-        "menu": Sio4CoreMenuInterface | undefined;
+        "menu": Sio4MenuInterface | undefined;
         "sidemenu": 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
+    }
+    interface Sio4Icon {
+        /**
+          * The first name
+         */
+        "first": string;
+        /**
+          * The last name
+         */
+        "last": string;
+        /**
+          * The middle name
+         */
+        "middle": string;
     }
     interface Sio4Menu {
         "color": string | undefined;
@@ -21,7 +35,7 @@ export namespace Components {
         "layout": 'flat' | 'accordion';
         "lines": 'full' | 'inset' | 'none';
         "menuId": string;
-        "menuItems": Sio4CoreMenuItemInterface[] | undefined;
+        "menuItems": Sio4MenuItemInterface[] | undefined;
         "position": 'top' | 'bottom' | 'hover';
         "toggleIcon": string;
         "toggleIconSlot": 'start' | 'end';
@@ -50,6 +64,12 @@ declare global {
         prototype: HTMLSio4AppElement;
         new (): HTMLSio4AppElement;
     };
+    interface HTMLSio4IconElement extends Components.Sio4Icon, HTMLStencilElement {
+    }
+    var HTMLSio4IconElement: {
+        prototype: HTMLSio4IconElement;
+        new (): HTMLSio4IconElement;
+    };
     interface HTMLSio4MenuElement extends Components.Sio4Menu, HTMLStencilElement {
     }
     var HTMLSio4MenuElement: {
@@ -64,16 +84,31 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "sio4-app": HTMLSio4AppElement;
+        "sio4-icon": HTMLSio4IconElement;
         "sio4-menu": HTMLSio4MenuElement;
         "sio4-menu-item": HTMLSio4MenuItemElement;
     }
 }
 declare namespace LocalJSX {
     interface Sio4App {
-        "appName"?: string;
+        "atitle"?: string;
         "color"?: string | undefined;
-        "menu"?: Sio4CoreMenuInterface | undefined;
+        "menu"?: Sio4MenuInterface | undefined;
         "sidemenu"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
+    }
+    interface Sio4Icon {
+        /**
+          * The first name
+         */
+        "first"?: string;
+        /**
+          * The last name
+         */
+        "last"?: string;
+        /**
+          * The middle name
+         */
+        "middle"?: string;
     }
     interface Sio4Menu {
         "color"?: string | undefined;
@@ -82,7 +117,7 @@ declare namespace LocalJSX {
         "layout"?: 'flat' | 'accordion';
         "lines"?: 'full' | 'inset' | 'none';
         "menuId"?: string;
-        "menuItems"?: Sio4CoreMenuItemInterface[] | undefined;
+        "menuItems"?: Sio4MenuItemInterface[] | undefined;
         "position"?: 'top' | 'bottom' | 'hover';
         "toggleIcon"?: string;
         "toggleIconSlot"?: 'start' | 'end';
@@ -105,6 +140,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "sio4-app": Sio4App;
+        "sio4-icon": Sio4Icon;
         "sio4-menu": Sio4Menu;
         "sio4-menu-item": Sio4MenuItem;
     }
@@ -114,6 +150,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "sio4-app": LocalJSX.Sio4App & JSXBase.HTMLAttributes<HTMLSio4AppElement>;
+            "sio4-icon": LocalJSX.Sio4Icon & JSXBase.HTMLAttributes<HTMLSio4IconElement>;
             "sio4-menu": LocalJSX.Sio4Menu & JSXBase.HTMLAttributes<HTMLSio4MenuElement>;
             "sio4-menu-item": LocalJSX.Sio4MenuItem & JSXBase.HTMLAttributes<HTMLSio4MenuItemElement>;
         }

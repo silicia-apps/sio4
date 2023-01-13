@@ -1,5 +1,5 @@
-import { Sio4CoreMenuItemInterface } from '../menu-item';
-export interface Sio4CoreMenuInterface {
+import { Sio4MenuItemInterface } from '../sio4-menu-item';
+export interface Sio4MenuInterface {
   menuId: string;
   enabled: boolean;
   layout: 'flat' | 'accordion';
@@ -9,5 +9,5 @@ export interface Sio4CoreMenuInterface {
   toggleIconSlot: string;
   lines: 'full' | 'inset' | 'none';
   position: 'top' | 'bottom' | 'hover';
-  menuItems: Sio4CoreMenuItemInterface[] | undefined;
+  menuItems: Sio4MenuItemInterface[] | undefined;
 }

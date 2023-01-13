@@ -1,5 +1,5 @@
 import { Component, getMode, h, Prop, setMode } from '@stencil/core';
-import { Sio4CoreMenuItemInterface } from './menu-item.interface';
+import { Sio4MenuItemInterface } from './menu-item.interface';
 
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -14,7 +14,7 @@ import { Sio4CoreMenuItemInterface } from './menu-item.interface';
   styleUrl: 'menu-item.scss',
   shadow: true,
 })
-export class Sio4CoreMenuItemComponent implements Sio4CoreMenuItemInterface {
+export class Sio4MenuItem implements Sio4MenuItemInterface {
   @Prop() menuItemId: number | undefined;
   @Prop() icon: string | undefined;
   @Prop() url: string = '/';

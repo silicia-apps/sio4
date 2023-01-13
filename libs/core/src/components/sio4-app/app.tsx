@@ -1,17 +1,17 @@
 import { Component, h, Prop } from '@stencil/core';
-import { Sio4CoreMenuInterface } from '../menu';
-import { Sio4CoreAppInterface } from './app.interface';
+import { Sio4MenuInterface } from '../sio4-menu';
+import { Sio4AppInterface } from './app.interface';
 
 @Component({
   tag: 'sio4-app',
   styleUrl: 'app.scss',
   shadow: true,
 })
-export class Sio4CoreAppComponent implements Sio4CoreAppInterface {
-  @Prop() appName: string = 'SILICIA APP';
+export class Sio4App implements Sio4AppInterface {
+  @Prop() atitle: string = 'SILICIA APP';
   @Prop() sidemenu: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none' = 'none';
   @Prop() color: string | undefined = undefined;
-  @Prop() menu: Sio4CoreMenuInterface | undefined = undefined;
+  @Prop() menu: Sio4MenuInterface | undefined = undefined;
 
   render() {
     return (
@@ -22,7 +22,7 @@ export class Sio4CoreAppComponent implements Sio4CoreAppInterface {
               <ion-header class="ion-no-border">
                 <slot name="header">
                   <ion-toolbar color={this.color}>
-                    <ion-title>{this.appName}</ion-title>
+                    <ion-title>{this.atitle}</ion-title>
                   </ion-toolbar>
                 </slot>
               </ion-header>

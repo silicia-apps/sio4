@@ -1,1 +1,1 @@
-// import '@ionic/core';
+import '@ionic/core';
