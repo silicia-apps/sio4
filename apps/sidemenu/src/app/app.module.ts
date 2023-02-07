@@ -12,7 +12,12 @@ import { sio4CoreAngularModule } from '@sio4/angular';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), sio4CoreAngularModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    sio4CoreAngularModule,
+    AppRoutingModule,
+  ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

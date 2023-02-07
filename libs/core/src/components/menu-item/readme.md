@@ -35,7 +35,7 @@
 
 ### Used by
 
- - [sio4-menu](../sio4-menu)
+ - [sio4-menu](../menu)
 
 ### Depends on
 

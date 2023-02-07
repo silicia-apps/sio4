@@ -1,28 +1,34 @@
-import { Component, h, Prop } from '@stencil/core';
-import { Sio4MenuInterface } from '../sio4-menu';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
+import { Sio4MenuInterface } from '../menu';
 import { Sio4AppInterface } from './app.interface';
+import { sio4Color } from '../../global/types';
 
 @Component({
   tag: 'sio4-app',
-  styleUrl: 'app.scss',
+  styleUrl: 'app.component.scss',
   shadow: true,
 })
-export class Sio4App implements Sio4AppInterface {
-  @Prop() title: string = 'SILICIA APP';
-  @Prop() sidemenu: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none' = 'none';
-  @Prop() color: string | undefined = undefined;
+export class Sio4AppComponent implements Sio4AppInterface {
+  @Prop() appname = 'SILICIA APP';
+  @Prop() sidemenu: 'overlay'| 'reveal'| 'push' | 'toogle' | 'none' = 'none';
+  @Prop() color: sio4Color;
   @Prop() menu: Sio4MenuInterface | undefined = undefined;
+  @Prop() tab: 'side' | 'bottom' | 'top' | 'none' = 'none';
 
+  @Event() sio4SplitPanelVisible: EventEmitter<{ visible: boolean }>;
+
+ 
   render() {
     return (
       <ion-app>
         {this.sidemenu !== 'none' ? (
-          <ion-split-pane when="xl" contentId="main-content">
+          <ion-split-pane when="xl" contentId="main-content" onIonSplitPaneVisible={ev => this.sio4SplitPanelVisible.emit(ev.detail)}>
             <ion-menu contentId="main-content" type="overlay">
               <ion-header class="ion-no-border">
                 <slot name="header">
                   <ion-toolbar color={this.color}>
-                    <ion-title>{this.title}</ion-title>
+                    <ion-title>{this.appname}</ion-title>
                   </ion-toolbar>
                 </slot>
               </ion-header>
@@ -49,7 +55,7 @@ export class Sio4App implements Sio4AppInterface {
               </ion-content>
               <ion-footer class="ion-no-border">
                 <slot name="footer">
-                  <ion-toolbar>
+                  <ion-toolbar color="{this.color}">
                     <ion-buttons slot="end">
                       <ion-button href="https://github.com/silicia-apps/sio4">
                         <ion-icon

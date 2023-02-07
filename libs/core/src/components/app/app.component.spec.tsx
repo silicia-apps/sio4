@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Sio4CoreAppComponent } from './app';
+import { Sio4AppComponent } from './app.component';
 
 describe('sio4-app', () => {
   it('renders', async () => {
     const { root } = await newSpecPage({
-      components: [Sio4CoreAppComponent],
+      components: [Sio4AppComponent],
       html: '<sio4-app></sio4-app>',
     });
     expect(root).toEqualHtml(`
@@ -20,7 +20,7 @@ describe('sio4-app', () => {
 
   it('renders with values', async () => {
     const { root } = await newSpecPage({
-      components: [Sio4CoreAppComponent],
+      components: [Sio4AppComponent],
       html: `<sio4-app first="Stencil" last="'Don't call me a framework' JS"></sio4-app>`,
     });
     expect(root).toEqualHtml(`

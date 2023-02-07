@@ -1,9 +1,10 @@
 import { html } from 'lit-html';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Sio4Icon } from '@sio4/core/sio4-icon';
 
 export default {
   title: 'Sio4Icon',
-  component: 'Sio4Icon',
+  component: 'Sio4IconComponent',
   args: {
     first: 'first',
     middle: 'first',
@@ -12,7 +13,7 @@ export default {
 };
 
 const Template = (args) => {
-  return html`
+  return html `
     <sio4-icon
       first=${args.first}
       middle=${args.middle}

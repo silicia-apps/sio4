@@ -25,7 +25,7 @@
 
 ### Used by
 
- - [sio4-app](../sio4-app)
+ - [sio4-app](../app)
 
 ### Depends on
 
@@ -34,7 +34,7 @@
 - ion-item
 - ion-label
 - ion-list
-- [sio4-menu-item](../sio4-menu-item)
+- [sio4-menu-item](../menu-item)
 - ion-item-divider
 - ion-menu-toggle
 - ion-tabs

@@ -9,7 +9,7 @@ import { filterByLoaderName } from './utils/webpack-module-rules';
  * @see https://github.com/storybookjs/storybook/blob/main/docs/configure/overview.md#using-storybook-api
  */
 export const config: StorybookConfig = {
-  addons: ['@storybook/addon-essentials'],
+  addons: [ '@storybook/addon-essentials', '@storybook/addon-notes'],
   core: {
     builder: {
       name: 'webpack5',

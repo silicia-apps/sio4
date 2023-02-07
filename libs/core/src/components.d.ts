@@ -5,14 +5,19 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Sio4MenuInterface } from "./components/sio4-menu";
-import { Sio4MenuItemInterface } from "./components/sio4-menu-item";
+import { sio4Color } from "./global/types";
+import { Sio4MenuInterface } from "./components/menu";
+import { Sio4MenuItemInterface } from "./components/menu-item";
+export { sio4Color } from "./global/types";
+export { Sio4MenuInterface } from "./components/menu";
+export { Sio4MenuItemInterface } from "./components/menu-item";
 export namespace Components {
     interface Sio4App {
-        "color": string | undefined;
+        "appname": string;
+        "color": sio4Color;
         "menu": Sio4MenuInterface | undefined;
-        "sidemenu": 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
-        "title": string;
+        "sidemenu": 'overlay'| 'reveal'| 'push' | 'toogle' | 'none';
+        "tab": 'side' | 'bottom' | 'top' | 'none';
     }
     interface Sio4Icon {
         /**
@@ -57,6 +62,10 @@ export namespace Components {
         "url": string;
     }
 }
+export interface Sio4AppCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSio4AppElement;
+}
 declare global {
     interface HTMLSio4AppElement extends Components.Sio4App, HTMLStencilElement {
     }
@@ -91,10 +100,12 @@ declare global {
 }
 declare namespace LocalJSX {
     interface Sio4App {
-        "color"?: string | undefined;
+        "appname"?: string;
+        "color"?: sio4Color;
         "menu"?: Sio4MenuInterface | undefined;
-        "sidemenu"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
-        "title"?: string;
+        "onSio4SplitPanelVisible"?: (event: Sio4AppCustomEvent<{ visible: boolean }>) => void;
+        "sidemenu"?: 'overlay'| 'reveal'| 'push' | 'toogle' | 'none';
+        "tab"?: 'side' | 'bottom' | 'top' | 'none';
     }
     interface Sio4Icon {
         /**

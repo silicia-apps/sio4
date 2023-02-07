@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Component, getMode, h, Prop, setMode } from '@stencil/core';
 import { Sio4MenuItemInterface } from './menu-item.interface';
 
@@ -11,20 +12,20 @@ import { Sio4MenuItemInterface } from './menu-item.interface';
 
 @Component({
   tag: 'sio4-menu-item',
-  styleUrl: 'menu-item.scss',
+  styleUrl: 'menu-item.component.scss',
   shadow: true,
 })
-export class Sio4MenuItem implements Sio4MenuItemInterface {
+export class Sio4MenuItemComponent implements Sio4MenuItemInterface {
   @Prop() menuItemId: number | undefined;
   @Prop() icon: string | undefined;
-  @Prop() url: string = '/';
+  @Prop() url = '/';
   @Prop() caption: string | undefined;
   @Prop() type: 'download' | 'navigate' = 'navigate';
-  @Prop() disabled: boolean = false;
-  @Prop() badge: number = 0;
-  @Prop() tabbed: boolean = false;
+  @Prop() disabled = false;
+  @Prop() badge = 0;
+  @Prop() tabbed = false;
   @Prop() layout: string;
-  @Prop() styleMenu: string = 'rounded';
+  @Prop() styleMenu = 'rounded';
 
   constructor() {
     this.caption = (

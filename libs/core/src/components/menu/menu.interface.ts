@@ -1,4 +1,4 @@
-import { Sio4MenuItemInterface } from '../sio4-menu-item';
+import { Sio4MenuItemInterface } from '../menu-item';
 export interface Sio4MenuInterface {
   menuId: string;
   enabled: boolean;

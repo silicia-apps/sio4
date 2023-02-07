@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Sio4CoreMenuItemComponent } from './menu-item';
+import { Sio4MenuItemComponent } from './menu-item.component';
 
 describe('sio4-menu-item', () => {
   it('renders', async () => {
     const { root } = await newSpecPage({
-      components: [Sio4CoreMenuItemComponent],
+      components: [Sio4MenuItemComponent],
       html: '<sio4-menu-item></sio4-menu-item>',
     });
     expect(root).toEqualHtml(`
@@ -20,7 +20,7 @@ describe('sio4-menu-item', () => {
 
   it('renders with values', async () => {
     const { root } = await newSpecPage({
-      components: [Sio4CoreMenuItemComponent],
+      components: [Sio4MenuItemComponent],
       html: `<sio4-menu-item first="Stencil" last="'Don't call me a framework' JS"></sio4-menu-item>`,
     });
     expect(root).toEqualHtml(`

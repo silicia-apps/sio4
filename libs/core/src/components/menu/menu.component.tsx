@@ -1,19 +1,20 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Component, h, Prop } from '@stencil/core';
-import { Sio4MenuItemInterface } from '../sio4-menu-item';
+import { Sio4MenuItemInterface } from '../menu-item';
 import { Sio4MenuInterface } from './menu.interface';
 
 @Component({
   tag: 'sio4-menu',
-  styleUrl: 'menu.scss',
+  styleUrl: 'menu.component.scss',
   shadow: true,
 })
-export class Sio4CoreMenuComponent implements Sio4MenuInterface {
-  @Prop() menuId: string = 'main';
-  @Prop() enabled: boolean = false;
+export class Sio4MenuComponent implements Sio4MenuInterface {
+  @Prop() menuId = 'main';
+  @Prop() enabled = false;
   @Prop() layout: 'flat' | 'accordion' = 'flat';
-  @Prop() label: string = 'NO LABEL';
+  @Prop() label = 'NO LABEL';
   @Prop() color: string | undefined;
-  @Prop() toggleIcon: string = '';
+  @Prop() toggleIcon = '';
   @Prop() toggleIconSlot: 'start' | 'end' = 'start';
   @Prop() lines: 'full' | 'inset' | 'none' = 'none';
   @Prop() position: 'top' | 'bottom' | 'hover' = 'hover';

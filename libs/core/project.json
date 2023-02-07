@@ -60,7 +60,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": "libs/core/**/*.{ts,tsx}"
+        "lintFilePatterns": ["libs/core/**/*.{ts,tsx}"]
       }
     },
     "storybook": {

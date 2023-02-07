@@ -19,7 +19,8 @@ export const config: Config = {
   extras: {
     experimentalImportInjection: true,
   },
-  globalScript: 'src/global/ionic-global.ts',
+  globalStyle: 'src/global/global.scss',
+  globalScript: 'src/global/global.ts',
   plugins: [sass()],
   outputTargets: [
     {
@@ -42,7 +43,7 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
-      autoDefineCustomElements: true,
+      customElementsExportBehavior: 'auto-define-custom-elements',
       includeGlobalScripts: false,
     },
 

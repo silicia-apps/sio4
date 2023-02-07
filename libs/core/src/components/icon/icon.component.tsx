@@ -1,11 +1,12 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'sio4-icon',
-  styleUrl: 'sio4-icon.scss',
+  styleUrl: 'icon.component.scss',
   shadow: true,
 })
-export class Sio4Icon {
+export class Sio4IconComponent {
   /**
    * The first name
    */
@@ -21,15 +22,8 @@ export class Sio4Icon {
    */
   @Prop() last: string;
 
-  private getText(): string {
-    return (
-      (this.first || '') +
-      (this.middle ? ` ${this.middle}` : '') +
-      (this.last ? ` ${this.last}` : '')
-    );
-  }
-
+  
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    return ( <div>Hello, World! I'm </div> );
   }
 }
