@@ -42,3 +42,4 @@ Thumbs.db
 libs/react/**/generated
 libs/svelte/**/generated
 libs/angular/**/generated
+libs/core-angular/**/generated

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DIRECTIVES } from '../generated/directives';
 import { defineCustomElements } from '@sio4/core/loader';
@@ -10,4 +10,4 @@ defineCustomElements();
   declarations: [...DIRECTIVES],
   exports: [...DIRECTIVES],
 })
-export class sio4CoreAngularModule {}
+export class sio4AngularModule {}

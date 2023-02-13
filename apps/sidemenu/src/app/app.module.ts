@@ -7,7 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { sio4CoreAngularModule } from '@sio4/angular';
+import { sio4AngularModule } from '@sio4/angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +15,7 @@ import { sio4CoreAngularModule } from '@sio4/angular';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    sio4CoreAngularModule,
+    sio4AngularModule,
     AppRoutingModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
